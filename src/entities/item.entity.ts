@@ -2,9 +2,9 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  CreateDateCoiumn,
-  UpDateColumn,
-} from "typeorm"
+  CreateDateColumn,
+  UpdateDateColumn,
+} from "typeorm";
 
 @Entity()
 export class Item {
@@ -17,7 +17,7 @@ export class Item {
   @Column("datetime")
   limit: Date;
 
-  @Column("boolean", {default: false})
+  @Column("boolean", { default: false })
   idDone: boolean;
 
   @Column()
@@ -26,6 +26,6 @@ export class Item {
   @CreateDateColumn()
   readonly createdAt?: Date;
 
-  @UpDateColumn()
-  readonly updated?: Date;
+  @UpdateDateColumn()
+  readonly updatedAt?: Date;
 }
